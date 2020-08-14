@@ -1,3 +1,9 @@
+# defaults
+.idea/
+frontend/.idea
+__pycache__/
+
+
 # Logs
 logs
 *.log
