@@ -1,4 +1,12 @@
 import calendar
+import re
+import pandas as pd
+import numpy as np
+import json
+
+class LackOfTheYearException(Exception):
+    pass
+
 
 
 def get_calendar(year):
@@ -36,13 +44,28 @@ def get_weeks(year):
         if i+6 < len(tmp):
             weeks[f'W{c}'] = [tmp[i], tmp[i+6]]
         else:
-            days2go = max(cal[12])-int(tmp[i].split('.')[0])
+            days2go = 6-(max(cal[12])-int(tmp[i].split('.')[0]))
             weeks[f'W{c}'] = [tmp[i], f'{days2go:02d}.01']
         
         c += 1
     
     return weeks
 
+def get_vacations(year):
+    prod_cal = pd.read_csv('data/production_calendar.csv', header=1, names=['year', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                            usecols=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+    if year > int(prod_cal['year'].astype(int).max()):
+        raise LackOfTheYearException('Keep your production calendar up-to-date!')
+
+    cal = {}
+    prod_cal[prod_cal['year'] == year].iloc[0, 1:].values
+    for i, el in enumerate(prod_cal[prod_cal['year'] == year].iloc[0, 1:].values):
+        cal[i+1] = list(map(lambda x: int(x), re.findall(r'\d+', el)))
+    return cal
 
 if __name__ == '__main__':
-    get_weeks(2020)
+    print(get_vacations(2025))
+    print('--------')
+    print(get_weeks(2022))
+    print('--------')
+    print(get_calendar(2025))
