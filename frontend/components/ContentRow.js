@@ -3,9 +3,16 @@ import "../assets/style/App.css";
 import { Row } from "react-bootstrap";
 
 class Card extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+
     render() {
+
         let card =
-            <div className={`card${this.props.data.free ? " free" : ""}`}>
+            <div className={`card${this.props.data.free ? " free" : ""}`}
+                 onClick={() => this.props.showSchedule(this.props.data)}
+            >
                 <h3>{this.props.header}</h3>
             </div>
 
@@ -22,25 +29,28 @@ class Calendar extends React.Component{
                     {
                         this.props.days !== null && this.props.days.length ?
                             this.props.days.map((obj, i) =>
-                                <Card data={obj} key={i} day={i} header=
-                                    {(function(){
-                                        switch (i){
-                                            case 0:
-                                                return 'Понедельник'
-                                            case 1:
-                                                return 'Вторник'
-                                            case 2:
-                                                return 'Среда'
-                                            case 3:
-                                                return 'Четверг'
-                                            case 4:
-                                                return 'Пятница'
-                                            case 5:
-                                                return 'Суббота'
-                                            case 6:
-                                                return 'Воскресенье'
-                                        }
-                                })()}/>
+                                <Card data={obj} key={i} day={i}
+                                      header={(
+                                          function(){
+                                            switch (i){
+                                                case 0:
+                                                    return 'Понедельник'
+                                                case 1:
+                                                    return 'Вторник'
+                                                case 2:
+                                                    return 'Среда'
+                                                case 3:
+                                                    return 'Четверг'
+                                                case 4:
+                                                    return 'Пятница'
+                                                case 5:
+                                                    return 'Суббота'
+                                                case 6:
+                                                    return 'Воскресенье'
+                                            }
+                                      })()}
+                                      showSchedule={this.props.showSchedule}
+                                />
                             )
                             :
                             null
@@ -109,7 +119,11 @@ export default class extends React.Component{
                           </div>
                       </div>
 
-                      <Calendar days={obj.days} active={this.state.active}/>
+                      <Calendar
+                          days={obj.days}
+                          active={this.state.active}
+                          showSchedule={this.props.showSchedule}
+                      />
                   </div>
             </div>
 

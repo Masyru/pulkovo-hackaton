@@ -1,0 +1,627 @@
+{
+  "data": {
+    "current_date": [
+      "15.08",
+      "22.08"
+    ],
+    "weeks": [
+      // Тут должны быть 52 недели
+      {
+        "date": [
+          "23.08",
+          "30.08"
+        ],
+        "days": [
+          {
+            "date": '16.08',
+            "free": false,
+            "sections": [
+              'Ssdfsd fsdfsdfsd ds',
+              'sdfsdfsd sdfsdffgh ffghfgh',
+              'dfgdf gdfg dfgdfgdfg dgdfg',
+              'jghj ghjgjdsfgs sdfsdfsdf'
+            ],
+            "teachers": [
+              'sdfsdfsd rthrt rthrth ',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf'
+            ],
+            "subjects": [
+              [
+                {
+                  "teacher": 'Sdfsdfsdf A.F',
+                  "theme": 'svsvsdv sdvsdvsdf',
+                  "group": 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  "teacher": 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: "dfgdfdfd fvdfdfg ddfgdfgfdggg"
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdf ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ]
+            ]
+          },
+          {
+            date: '15.08',
+            free: false,
+            sections: [
+              'Ssdfsd fsdfsdfsd ds',
+              'sdfsdfsd sdfsdffgh ffghfgh',
+              'dfgdf gdfg dfgdfgdfg dgdfg',
+              'jghj ghjgjdsfgs sdfsdfsdf'
+            ],
+            teachers: [
+              'sdfsdfsd rthrt rthrth ',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf'
+            ],
+            subjects: [
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ]
+            ]
+          },
+          {
+            date: '17.08',
+            free: false,
+            sections: [
+              'Ssdfsd fsdfsdfsd ds',
+              'sdfsdfsd sdfsdffgh ffghfgh',
+              'dfgdf gdfg dfgdfgdfg dgdfg',
+              'jghj ghjgjdsfgs sdfsdfsdf'
+            ],
+            teachers: [
+              'sdfsdfsd rthrt rthrth ',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf'
+            ],
+            subjects: [
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ]
+            ]
+          },
+          {
+            date: '19.08',
+            free: false,
+            sections: [
+              'Ssdfsd fsdfsdfsd ds',
+              'sdfsdfsd sdfsdffgh ffghfgh',
+              'dfgdf gdfg dfgdfgdfg dgdfg',
+              'jghj ghjgjdsfgs sdfsdfsdf'
+            ],
+            teachers: [
+              'sdfsdfsd rthrt rthrth ',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf'
+            ],
+            subjects: [
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ]
+            ]
+          },
+          {
+            date: '20.08',
+            sections: [
+              'Ssdfsd fsdfsdfsd ds',
+              'sdfsdfsd sdfsdffgh ffghfgh',
+              'dfgdf gdfg dfgdfgdfg dgdfg',
+              'jghj ghjgjdsfgs sdfsdfsdf'
+            ],
+            teachers: [
+              'sdfsdfsd rthrt rthrth ',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf'
+            ],
+            subjects: [
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ]
+            ]
+          },
+          {
+            date: '21.08',
+            free: true,
+            sections: [
+              'Ssdfsd fsdfsdfsd ds',
+              'sdfsdfsd sdfsdffgh ffghfgh',
+              'dfgdf gdfg dfgdfgdfg dgdfg',
+              'jghj ghjgjdsfgs sdfsdfsdf'
+            ],
+            teachers: [
+              'sdfsdfsd rthrt rthrth ',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf'
+            ],
+            subjects: [
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ]
+            ]
+          },
+          {
+            date: '22.08',
+            free: true,
+            sections: [
+              'Ssdfsd fsdfsdfsd ds',
+              'sdfsdfsd sdfsdffgh ffghfgh',
+              'dfgdf gdfg dfgdfgdfg dgdfg',
+              'jghj ghjgjdsfgs sdfsdfsdf'
+            ],
+            teachers: [
+              'sdfsdfsd rthrt rthrth ',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf',
+              'sdfsdfsdf dsfsdfsd dsfsdf',
+              'sdfsdf sdfsdfsdf sdfsdf'
+            ],
+            subjects: [
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ],
+              [
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                },
+                {
+                  teacher: 'Sdfsdfsdf A.F',
+                  theme: 'svsvsdv sdvsdvsdf',
+                  group: 'dfgdfdfd fvdfdfg ddfgdfgfdggg'
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

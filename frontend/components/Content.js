@@ -7,19 +7,27 @@ export default class extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-
+            arr: this.props.data,
         }
     }
 
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
+        this.setState({
+            arr: nextProps.data,
+        })
+    }
+
     render(){
+        const arr = this.state.arr;
+
         let content = this.props.mode ?
             null
             :
             <div className={'content my-3'}>
                 {
-                    this.props.data !== null && this.props.data.length ?
-                        this.props.data.map((obj, i) =>
-                            <ContentRow data={obj} key={i} num={i}/>
+                    arr !== null && arr.weeks !== undefined && arr.weeks.length ?
+                        arr.weeks.map((obj, i) =>
+                            <ContentRow data={obj} key={i} num={i} showSchedule={this.props.showSchedule}/>
                         ) :
                         <div className={'loading'}>
                             Loading

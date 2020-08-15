@@ -1,3 +1,9 @@
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +18,7 @@ body {
 
 .app {
     width: 100%;
+    position: relative;
 }
 
 .schedule {
@@ -92,11 +99,9 @@ body {
 
 .content {
     width: 100%;
-    max-height: 600px;
+    max-height: calc(100% - 250px);
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    scroll-behavior: smooth;
 }
 
 .widget-row {
@@ -188,11 +193,157 @@ body {
     cursor: not-allowed;
 }
 
-
 .content .calendar-row .calendar .card h3 {
     font-family: "SF Pro Light", sans-serif;
     font-size: 20px;
+}
+
+.current_el {
+    background-color: #f7eedd;
+    box-shadow: 5px 5px 0 0 #bd974a;
+}
+
+/* Schedule */
+
+.schedule {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.schedule.active {
+    display: block;
+}
+
+.schedule-content.active {
+    display: flex;
+    flex-direction: column;
+    animation: slideInDown;
+    animation-duration: .2s;
+}
+
+.schedule-content {
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+
+    animation: slideInUp;
+    animation-duration: .2s;
+}
+
+.schedule-content .for-close-btn {
+    width: 100%;
+    padding: 20px 20px 0 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.schedule-content .content{
+    width: 100%;
+    height: calc(100% - 66px);
+    max-height: none;
 
 }
+
+.slide-menu {
+    align-self: center;
+    margin-top: 30px;
+    padding: 5px 5%;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: center;
+    width: 80%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #aec8f3;
+
+}
+
+.slide-menu .item {
+    font-family: "SF Pro Bold", sans-serif;
+    color: #ececec;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    height: 100%;
+    width: 25%;
+}
+
+.slide-menu .item.active {
+    color: #fff;
+    background-color: #3865ae;
+}
+
+.arrange-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.cards-item {
+    width: 70%;
+    margin: 30px auto;
+    display: flex;
+}
+
+.cards-item .auditory {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cards-item .topic {
+    width: 100%;
+    padding-left: 10%;
+}
+
+.cards-item .topic span {
+    font-size: 18px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
