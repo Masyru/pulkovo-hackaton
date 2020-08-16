@@ -155,7 +155,7 @@ def two(filename):
     programs_params[['practical_hours', 'hours_in_SDO']] = programs_params[['practical_hours', 'hours_in_SDO']].astype(float)
     programs_params.iloc[:, -6:] = programs_params.iloc[:, -6:].astype(int)
     programs_params['features'] = programs_params['features'].apply(lambda x: 'нет' if 'желат' in ' '.join(x.split()) else x)
-
+    programs_params['hours_in_class'] = programs_params['hours_in_class'].astype(int)
 
     # ROOMS
     rooms_params = dfs['параметры аудиторий']

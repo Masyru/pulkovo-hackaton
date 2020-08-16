@@ -7,14 +7,14 @@ import json
 class LackOfTheYearException(Exception):
     pass
 
-
-
 def get_calendar(year):
     cal = {key:[] for key in range(1, 13)}
     for month in range(1, 13):
         flag = False
         prev = 0
+        weekdays = []
         for el in calendar.Calendar().itermonthdates(year, month):
+            weekdays.append(el.weekday())
             if el.day == 1 and not flag:
                 flag = True
                 cal[month].append(el.day)
@@ -64,8 +64,8 @@ def get_vacations(year):
     return cal
 
 if __name__ == '__main__':
-    print(get_vacations(2025))
+    print(get_vacations(2020))
     print('--------')
-    print(get_weeks(2022))
+    print(get_weeks(2020))
     print('--------')
-    print(get_calendar(2025))
+    print(get_calendar(2020))
