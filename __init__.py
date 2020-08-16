@@ -2,10 +2,11 @@ from flask import Flask, request, render_template, redirect, abort, url_for
 from flask import jsonify
 import xlwt, xlrd
 import sqlite3
-import os
 from json import dumps, load, dump
 import ML.cal as cal
 import datetime
+from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__, static_folder="./frontend", template_folder="./frontend")
 
@@ -16,19 +17,20 @@ vacations = calendar = weeks = None
 admin_login = "admin"
 admin_password = "admin"
 
+@app.route(f"/{admin_password}/to_excel")
 def to_excel():
     year_now = datetime.datetime.now().year
     month_now = datetime.datetime.now().month
     day_now = datetime.datetime.now().day
 
-    with open("shedule.json", "r") as read_file:
-        data = json.load(read_file)
+    with open("ML/shedule.json", "r") as read_file:
+        data = load(read_file)
 
-    with open("teachers.json", "r") as read_file:
-        teachers = json.load(read_file)
+    with open("ML/teachers.json", "r") as read_file:
+        teachers = load(read_file)
 
-    with open("programs.json", "r") as read_file:
-        profiles = json.load(read_file)
+    with open("ML/programs.json", "r") as read_file:
+        profiles = load(read_file)
 
     finished = {"weeks": []}
     vacations = cal.get_vacations(year_now)
@@ -135,19 +137,30 @@ def to_excel():
                 f += 1
 
     wb.save('schedule_excel.xls')
+    return "OK"
 
-@app.route("/make_json_file")
+@app.route(f"/{admin_password}/upload_file", methods=["GET", "POST"])
+def upload_file():
+    if request.method == "GET":
+        return render_template("Source/upload.html")
+    else:
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return "File successfully uploaded"
+
+@app.route(f"/{admin_password}/make_json_file")
 def make_json_file():
     year_now = datetime.datetime.now().year
     month_now = datetime.datetime.now().month
     day_now = datetime.datetime.now().day
-    with open("shedule.json", "r") as read_file:
+    with open("ML/shedule.json", "r") as read_file:
         data = load(read_file)
 
-    with open("teachers.json", "r") as read_file:
+    with open("ML/teachers.json", "r") as read_file:
         teachers = load(read_file)
 
-    with open("programs.json", "r") as read_file:
+    with open("ML/programs.json", "r") as read_file:
         profiles = load(read_file)
 
 
