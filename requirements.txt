@@ -4,5 +4,3 @@ xlwt
 xlrd
 pandas
 numpy
-parse
-
