@@ -52,7 +52,7 @@ def get_weeks(year):
     return weeks
 
 def get_vacations(year):
-    prod_cal = pd.read_csv('ML/data/production_calendar.csv', header=1, names=['year', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+    prod_cal = pd.read_csv('data/production_calendar.csv', header=1, names=['year', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
                             usecols=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
     if year > int(prod_cal['year'].astype(int).max()):
         raise LackOfTheYearException('Keep your production calendar up-to-date!')
