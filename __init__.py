@@ -1,21 +1,35 @@
 from flask import Flask, request, render_template, redirect, abort, url_for
 from flask import jsonify
 import xlwt, xlrd
-import sqlite3
 from json import dumps, load, dump
 import ML.cal as cal
+import ML.parse as parse
 import datetime
 from werkzeug.utils import secure_filename
 import os
+import ML.parse as parse
+import ML.planner as planner
 
 app = Flask(__name__, static_folder="./frontend", template_folder="./frontend")
 
 app.config['SECRET_KEY'] = "Osbs9CKi3U0sIESM"
-app.config['UPLOAD_FOLDER'] = "ML/"
+app.config['UPLOAD_FOLDER'] = "ML/data"
 
 vacations = calendar = weeks = None
 admin_login = "admin"
 admin_password = "admin"
+
+
+@app.route(f"/{admin_password}/make_schedule")
+def make_schedule():
+    a, b, c = planner.optimize_schedule("ML/data/Приложение №2.xlsx", "ML/data/Приложение №4.xlsx", "ML/data/Приложение №5.xls")
+    dump(a, open("schedule.json", "w"))
+    dump(b, open("teachers.json", "w"))
+    dump(c, open("programs.json", "w"))
+    return "OK"
+
+
+
 
 @app.route(f"/{admin_password}/to_excel")
 def to_excel():
@@ -23,7 +37,7 @@ def to_excel():
     month_now = datetime.datetime.now().month
     day_now = datetime.datetime.now().day
 
-    with open("ML/shedule.json", "r") as read_file:
+    with open("ML/schedule.json", "r") as read_file:
         data = load(read_file)
 
     with open("ML/teachers.json", "r") as read_file:
@@ -154,7 +168,7 @@ def make_json_file():
     year_now = datetime.datetime.now().year
     month_now = datetime.datetime.now().month
     day_now = datetime.datetime.now().day
-    with open("ML/shedule.json", "r") as read_file:
+    with open("ML/schedule.json", "r") as read_file:
         data = load(read_file)
 
     with open("ML/teachers.json", "r") as read_file:
