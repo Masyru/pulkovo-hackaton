@@ -1,6 +1,6 @@
 flask
 requests
-xlwr
+xlwt
 xlrd
 pandas
 numpy
