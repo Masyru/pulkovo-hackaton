@@ -15,13 +15,16 @@ export default class extends React.Component{
             fetched_data: {},
             schedule: [],
             groups: [],
+            teachers: []
         }
 
         this.getDataFromServer = this.getDataFromServer.bind(this);
         this.changeSchedule = this.changeSchedule.bind(this);
         this.showSchedule = this.showSchedule.bind(this);
         this.initTheNameOfGroups = this.initTheNameOfGroups.bind(this);
+        this.initBySurname = this.initBySurname.bind(this);
         this.filterByGroup = this.filterByGroup.bind(this);
+        this.filterBySurname = this.filterBySurname.bind(this);
     }
 
     componentDidMount() {
@@ -3259,7 +3262,42 @@ export default class extends React.Component{
         }
     }
 
+    initBySurname(arr){
+        if (arr.weeks !== undefined && arr.weeks !== null){
+            let teachers = []
+            arr.weeks.forEach(item => {
+                item.days.forEach(day => {
+                    day.subjects.forEach(sub => {
+                        sub.forEach(section => {
+                            if (!teachers.includes(section.teacher)){
+                                teachers.push(section.group)
+                            }
+                        })
+                    })
+                })
+            })
+            this.setState({teachers: teachers})
+        }
+    }
+
     filterByGroup(name){
+        // Не работает "Uncaught TypeError: arr.weeks[i].days[j] is undefined"
+        if(name === 'Не указано'){
+            this.setState({data: this.state.fetched_data})
+        } else {
+            let arr = this.state.data;
+            for (let i = 0; i < arr.weeks.length; i++) {
+                for (let j = 0; i < arr.weeks[i].days.length; j++){
+                    console.log(arr.weeks[i].days[j])
+                    let a = arr.weeks[i].days[j].subjects.filter(obj => console.log(obj))
+                    console.log(a)
+                }
+            }
+            this.setState({data: arr})
+        }
+    }
+
+    filterBySurname(name){
         // Не работает "Uncaught TypeError: arr.weeks[i].days[j] is undefined"
         if(name === 'Не указано'){
             this.setState({data: this.state.fetched_data})
@@ -3281,7 +3319,13 @@ export default class extends React.Component{
         let app =
             <>
                 <Header changeSchedule={this.changeSchedule} />
-                <SearchLine mode={this.state.current_window} groups={this.state.groups} filterByGroup={this.filterByGroup}/>
+                <SearchLine
+                    mode={this.state.current_window}
+                    groups={this.state.groups}
+                    teachers={this.state.teachers}
+                    filterByGroup={this.filterByGroup}
+                    filterByTeacher={this.filterBySurname}
+                />
                 <hr className={'first-hr my-4'}/>
                 <Content data={this.state.data} mode={this.state.current_window} showSchedule={this.showSchedule}/>
                 <hr className={'first-hr my-4'}/>

@@ -1,12 +1,13 @@
 import React from 'react';
 import '../assets/style/App.css';
-import { InputGroup, Button, DropdownButton, Dropdown, FormControl, ButtonGroup } from "react-bootstrap";
+import { DropdownButton, Dropdown, ButtonGroup } from "react-bootstrap";
 
 export default class extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
             current_title: 'Выберите свой поток',
+            teacher_title: 'Выберите преподавателя',
         }
     }
 
@@ -34,17 +35,25 @@ export default class extends React.Component{
 
             </div>
             :
-            <div className={'searchline my-5'}>
-                <InputGroup className="mb-3">
-                    <FormControl
-                      placeholder="Фамилия преподавателя"
-                      aria-label="Recipient's username"
-                      aria-describedby="basic-addon2"
-                    />
-                    <InputGroup.Append>
-                        <Button variant="outline-secondary">Поиск</Button>
-                    </InputGroup.Append>
-                </InputGroup>
+            <div className={'dropdown-btn my-5'}>
+                <ButtonGroup>
+                    <DropdownButton id="dropdown-basic-button" title={this.state.teacher_title} variant={'outline-secondary'}>
+                       {
+                           this.props.teachers.map((name, i) => <Dropdown.Item key={i} onClick={() => {
+                               this.setState({teacher_title: name})
+                               this.props.filterByTeacher(name)
+                           }}
+                           >{name}</Dropdown.Item>)
+                       }
+                       <Dropdown.Divider/>
+                       <Dropdown.Item onClick={() => {
+                           this.setState({teacher_title: 'Выберите преподавателя'})
+                           this.props.filterByTeacher("Не указано")
+                       }}>
+                           Не указано
+                       </Dropdown.Item>
+                    </DropdownButton>
+                </ButtonGroup>
             </div>
 
 

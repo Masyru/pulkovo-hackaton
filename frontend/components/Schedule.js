@@ -5,7 +5,6 @@ import {Heading, Text, Divider} from '@adobe/react-spectrum'
 
 class ScheduleCards extends React.Component {
     render() {
-
         let cards =
                     this.props.data.map((obj, i) =>
                         <div className={'cards-item'} key={i}>

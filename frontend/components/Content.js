@@ -21,9 +21,7 @@ export default class extends React.Component{
     render(){
         const arr = this.state.arr;
 
-        let content = this.props.mode ?
-            null
-            :
+        let content =
             <div className={'content my-3'}>
                 {
                     arr !== null && arr.weeks !== undefined && arr.weeks.length ?
