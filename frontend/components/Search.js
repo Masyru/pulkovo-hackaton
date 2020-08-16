@@ -17,7 +17,7 @@ export default class extends React.Component{
                 <ButtonGroup>
                    <DropdownButton id="dropdown-basic-button" title={this.state.current_title} variant={'outline-secondary'}>
                        {
-                           this.props.groups.map((name, i) => <Dropdown.Item key={i} onClick={() => {
+                           this.props.teachers.map((name, i) => <Dropdown.Item key={i} onClick={() => {
                                this.setState({current_title: name})
                                this.props.filterByGroup(name)
                            }}
