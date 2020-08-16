@@ -26,7 +26,7 @@ def optimize_schedule(path1, path2, path3, n=10**3):
             best_schedule = schedule
         #print(f'{asds}/{n}: {best_score:010d}', end='\r')
     
-    return best_schedule
+    return best_schedule['rooms'], best_schedule['teachers'], best_schedule['programs']
         
         
         
