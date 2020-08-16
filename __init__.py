@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, redirect, abort, url_for
 from flask import jsonify
 import sqlite3
 import os
-from json import dumps
+from json import dumps, load
 from ML import cal
 
 app = Flask(__name__, static_folder="./frontend", template_folder="./frontend")
@@ -13,6 +13,10 @@ app.config['UPLOAD_FOLDER'] = "ML/"
 vacations = calendar = weeks = None
 admin_login = "admin"
 admin_password = "admin"
+
+@app.route("/schedule", methods=["POST", "GET"])
+def schedule():
+    return jsonify(load(open("frontend/Etc/data.json", "r")))
 
 @app.route("/calendar/get_weeks?year=<year>", methods=["POST", "GET"])
 def get_weeks(year):
