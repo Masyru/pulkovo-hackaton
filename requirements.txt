@@ -1,4 +1,14 @@
 flask
-sqlalchemy
 requests
-urllib3
+xlwr
+xlrd
+pandas
+numpy
+re
+json
+calendar
+collections
+os
+sys
+datetime
+time
