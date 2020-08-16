@@ -16,7 +16,7 @@ class ScheduleCards extends React.Component {
                                     <Heading level={3}>{obj.teacher}</Heading>
                                     <Text>Тема: {obj.theme}</Text>
                                     <Divider size="M"/>
-                                    <Text>Группа: {obj.group}</Text>
+                                    <Text>Профиль: {obj.group} - Группа: {obj.id}</Text>
                                 </div>
                         </div>
                     );
