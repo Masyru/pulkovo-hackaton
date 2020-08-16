@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = "ML/"
 vacations = calendar = weeks = None
 admin_login = "admin"
 admin_password = "admin"
-print()
+
 @app.route("/calendar/get_weeks?year=<year>", methods=["POST", "GET"])
 def get_weeks(year):
     global weeks
@@ -39,7 +39,7 @@ def get_all(year):
 @app.route("/", methods=["POST", "GET"])
 @app.route("/index", methods=["POST", "GET"])
 def index():
-    return render_template("Source/index_test.html")
+    return render_template("Source/index.html")
 
 @app.route("/admin", methods=["POST", "GET"])
 def admin():
