@@ -13,7 +13,7 @@ export default class extends React.Component{
         let header =
             <div className={'header'}>
                 <div className={'brand'}>
-                    <img src=""/>
+                    <img src="/frontend/assets/img/monoLOGO.png" alt='Rocketsched' width='55px' height='260px'/>
                 </div>
                 <div className={'links'}>
                     <a onClick={() => this.props.changeSchedule(0)}>Студенты</a>
