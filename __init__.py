@@ -16,7 +16,127 @@ vacations = calendar = weeks = None
 admin_login = "admin"
 admin_password = "admin"
 
-@app.route("/make")
+def to_excel():
+    year_now = datetime.datetime.now().year
+    month_now = datetime.datetime.now().month
+    day_now = datetime.datetime.now().day
+
+    with open("shedule.json", "r") as read_file:
+        data = json.load(read_file)
+
+    with open("teachers.json", "r") as read_file:
+        teachers = json.load(read_file)
+
+    with open("programs.json", "r") as read_file:
+        profiles = json.load(read_file)
+
+    finished = {"weeks": []}
+    vacations = cal.get_vacations(year_now)
+    weeks = cal.get_weeks(year_now)
+
+    calendar = cal.get_calendar(year_now)
+
+    err_date = datetime.date(year_now, 1, 1).weekday()
+    buf = ""
+    for week, days in weeks.items():
+        start = list(map(int, days[0].split(".")))
+        end = list(map(int, days[1].split(".")))
+        start[0] -= err_date
+        end[0] -= err_date
+        if start[0] <= 0:
+            start[1] -= 1
+            if start[1] <= 0:
+                start[0] += 31
+                start[1] += 12
+            else:
+                start[0] += calendar[start[1]][-1]
+
+        if end[0] <= 0:
+            end[1] -= 1
+            if end[1] <= 0:
+                end[0] += 31
+                end[1] += 12
+            else:
+                end[0] += calendar[start[1]][-1]
+        date_start = ""
+        if start[0] < 10:
+            date_start = "0" + str(start[0])
+        else:
+            date_start = str(start[0])
+        if start[1] < 10:
+            date_start += ".0" + str(start[1])
+        else:
+            date_start += "." + str(start[1])
+
+        date_end = ""
+        if end[0] < 10:
+            date_end = "0" + str(end[0])
+        else:
+            date_end = str(end[0])
+        if end[1] < 10:
+            date_end += ".0" + str(end[1])
+        else:
+            date_end += "." + str(end[1])
+        weeks[week] = [date_start, date_end]
+        buf = week
+    test = list(map(int, weeks[buf][1].split(".")))
+    if test[1] == 12 and test[0] < 31:
+        date_start = str(test[0] + 1) + ".12"
+        date_end = "0" + str(test[0] + 7 - 31) + ".01"
+        weeks["W" + str(int(buf[1:]) + 1)] = [date_start, date_end]
+
+    week_days = [[]]
+    numweek = "W1"
+    for month in calendar:
+        for day in calendar[month]:
+            date = ""
+            if day < 10:
+                date = "0" + str(day)
+            else:
+                date = str(day)
+            if month < 10:
+                date += ".0" + str(month)
+            else:
+                date += "." + str(month)
+            week_days[-1].append(date)
+            if weeks[numweek][1] == date and date != "31.12":
+                week_days.append([])
+                numweek = "W" + str(int(numweek[1:]) + 1)
+
+    wb = xlwt.Workbook()
+    for j in range(len(week_days)):
+        ws = wb.add_sheet(f"{j + 1} неделя")
+        ws.write(0, 0, 'Аудитории')
+        f = 2
+        for i in teachers["01.04"]:
+            ws.write(f, 0, i)
+            f += 1
+        for i in range(len(week_days[j])):
+            ws.write_merge(0, 0, 1 + 4 * i, 4 + 4 * i, week_days[j][i])
+            ws.write(1, 1 + 4 * i, '1 пара')
+            ws.write(1, 2 + 4 * i, '2 пара')
+            ws.write(1, 3 + 4 * i, '3 пара')
+            ws.write(1, 4 + 4 * i, '4 пара')
+            f = 2
+            for audit in teachers["01.04"]:
+                for pair in range(4):
+                    a = "Отсутствует"
+                    b = "Отсутствует"
+                    c = "Отсутствует"
+                    if week_days[j][i] in data:
+                        if data[week_days[j][i]][audit][pair] != 0:
+                            a = data[week_days[j][i]][audit][pair]
+                            if teachers[week_days[j][i]][audit][pair] != "":
+                                b = teachers[week_days[j][i]][audit][pair]
+                            if profiles[week_days[j][i]][audit][pair] != "":
+                                c = profiles[week_days[j][i]][audit][pair]
+                    text = f"ID группы: {a}\nПреподователь: {b}\nПрофиль: {c}\n"
+                    ws.write(f, pair + 1 + 4 * i, text)
+                f += 1
+
+    wb.save('schedule_excel.xls')
+
+@app.route("/make_json_file")
 def make_json_file():
     year_now = datetime.datetime.now().year
     month_now = datetime.datetime.now().month
