@@ -198,7 +198,7 @@ def admin():
         return render_template("Source/admin_test.html")
 
 
-    return render_template("Source/login_test.html")
+    return render_template("Source/admin.html")
 
 
 if __name__ == '__main__':
