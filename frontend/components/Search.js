@@ -15,11 +15,20 @@ export default class extends React.Component{
             <div className={'dropdown-btn my-5'}>
                 <ButtonGroup>
                    <DropdownButton id="dropdown-basic-button" title={this.state.current_title} variant={'outline-secondary'}>
-                       <Dropdown.Item onClick={() => this.setState({current_title: "Авиационное направление"})}>Авиационное направление</Dropdown.Item>
-                       <Dropdown.Item onClick={() => this.setState({current_title: "Инженерное направление"})}>Инженерное направление</Dropdown.Item>
-                       <Dropdown.Item onClick={() => this.setState({current_title: "Арт и исскуство"})}>Арт и исскуство</Dropdown.Item>
+                       {
+                           this.props.groups.map((name, i) => <Dropdown.Item key={i} onClick={() => {
+                               this.setState({current_title: name})
+                               this.props.filterByGroup(name)
+                           }}
+                           >{name}</Dropdown.Item>)
+                       }
                        <Dropdown.Divider/>
-                       <Dropdown.Item onClick={() => this.setState({current_title: "Выберите свой поток"})}>Не указано</Dropdown.Item>
+                       <Dropdown.Item onClick={() => {
+                           this.setState({current_title: 'Выберите свой поток'})
+                           this.props.filterByGroup("Не указано")
+                       }}>
+                           Не указано
+                       </Dropdown.Item>
                     </DropdownButton>
                 </ButtonGroup>
 

@@ -15,19 +15,6 @@
           {
             "date": '16.08',
             "free": false,
-            "sections": [
-              'Ssdfsd fsdfsdfsd ds',
-              'sdfsdfsd sdfsdffgh ffghfgh',
-              'dfgdf gdfg dfgdfgdfg dgdfg',
-              'jghj ghjgjdsfgs sdfsdfsdf'
-            ],
-            "teachers": [
-              'sdfsdfsd rthrt rthrth ',
-              'sdfsdfsdf dsfsdfsd dsfsdf',
-              'sdfsdf sdfsdfsdf sdfsdf',
-              'sdfsdfsdf dsfsdfsd dsfsdf',
-              'sdfsdf sdfsdfsdf sdfsdf'
-            ],
             "subjects": [
               [
                 {

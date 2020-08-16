@@ -5,20 +5,19 @@ import {Heading, Text, Divider} from '@adobe/react-spectrum'
 
 class ScheduleCards extends React.Component {
     render() {
-        console.log(this.props)
 
         let cards =
                     this.props.data.map((obj, i) =>
                         <div className={'cards-item'} key={i}>
-                            <div className="auditory">
-                                <Heading level={1}>{obj.aud}</Heading>
-                            </div>
-                            <div className="topic">
-                                <Heading level={3}>{obj.teacher}</Heading>
-                                <Text>Тема: {obj.theme}</Text>
-                                <Divider size="M"/>
-                                <Text>Группа: {obj.group}</Text>
-                            </div>
+                                <div className="auditory">
+                                    <Heading level={1}>{obj.aud}</Heading>
+                                </div>
+                                <div className="topic">
+                                    <Heading level={3}>{obj.teacher}</Heading>
+                                    <Text>Тема: {obj.theme}</Text>
+                                    <Divider size="M"/>
+                                    <Text>Группа: {obj.group}</Text>
+                                </div>
                         </div>
                     );
 
