@@ -8,14 +8,13 @@ class LackOfTheYearException(Exception):
     pass
 
 
+
 def get_calendar(year):
     cal = {key:[] for key in range(1, 13)}
     for month in range(1, 13):
         flag = False
         prev = 0
-
         for el in calendar.Calendar().itermonthdates(year, month):
-
             if el.day == 1 and not flag:
                 flag = True
                 cal[month].append(el.day)
@@ -27,8 +26,6 @@ def get_calendar(year):
             else:
                 cal[month].append(el.day)
             prev = el.day
-
-
 
     for key in cal.keys():
         cal[key] = [i for i in range(1, cal[key][-1]+1)]
@@ -50,14 +47,12 @@ def get_weeks(year):
             days2go = 6-(max(cal[12])-int(tmp[i].split('.')[0]))
             weeks[f'W{c}'] = [tmp[i], f'{days2go:02d}.01']
 
-
         c += 1
 
     return weeks
 
 def get_vacations(year):
-    prod_cal = pd.read_csv('ML/data/production_calendar.csv', header=1, names=['year', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-
+    prod_cal = pd.read_csv('data/production_calendar.csv', header=1, names=['year', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
                             usecols=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
     if year > int(prod_cal['year'].astype(int).max()):
         raise LackOfTheYearException('Keep your production calendar up-to-date!')
