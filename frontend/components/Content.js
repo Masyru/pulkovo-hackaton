@@ -2,6 +2,7 @@ import React from "react";
 import "../assets/style/App.css";
 
 import ContentRow from "./ContentRow";
+import { Spinner } from 'react-bootstrap';
 
 export default class extends React.Component{
     constructor(props) {
@@ -29,8 +30,15 @@ export default class extends React.Component{
                         arr.weeks.map((obj, i) =>
                             <ContentRow data={obj} key={i} num={i} showSchedule={this.props.showSchedule}/>
                         ) :
-                        <div className={'loading'}>
-                            Loading
+                        <div className={'loading'} style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <Spinner animation="border" />
                         </div>
                 }
             </div>;
