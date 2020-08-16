@@ -23,8 +23,6 @@ export default class extends React.Component{
         this.showSchedule = this.showSchedule.bind(this);
         this.initTheNameOfGroups = this.initTheNameOfGroups.bind(this);
         this.initBySurname = this.initBySurname.bind(this);
-        this.filterByGroup = this.filterByGroup.bind(this);
-        this.filterBySurname = this.filterBySurname.bind(this);
     }
 
     componentDidMount() {
@@ -3237,7 +3235,6 @@ export default class extends React.Component{
                                 })
                                 _this.initTheNameOfGroups(data);
                                 _this.initBySurname(data);
-                                console.log(data)
                             }
                         });
 	        }).catch(function (error) {
@@ -3286,52 +3283,16 @@ export default class extends React.Component{
         }
     }
 
-    filterByGroup(name){
-        // Не работает "Uncaught TypeError: arr.weeks[i].days[j] is undefined"
-        if(name === 'Не указано'){
-            this.setState({data: this.state.fetched_data})
-        } else {
-            let arr = this.state.data;
-            for (let i = 0; i < arr.weeks.length; i++) {
-                for (let j = 0; i < arr.weeks[i].days.length; j++){
-                    console.log(arr.weeks[i].days[j])
-                    let a = arr.weeks[i].days[j].subjects.filter(obj => console.log(obj))
-                    console.log(a)
-                }
-            }
-            this.setState({data: arr})
-        }
-    }
-
-    filterBySurname(name){
-        // Не работает "Uncaught TypeError: arr.weeks[i].days[j] is undefined"
-        if(name === 'Не указано'){
-            this.setState({data: this.state.fetched_data})
-        } else {
-            let arr = this.state.data;
-            for (let i = 0; i < arr.weeks.length; i++) {
-                for (let j = 0; i < arr.weeks[i].days.length; j++){
-                    console.log(arr.weeks[i].days[j])
-                    let a = arr.weeks[i].days[j].subjects.filter(obj => console.log(obj))
-                    console.log(a)
-                }
-            }
-            this.setState({data: arr})
-        }
-    }
-
     render(){
 
         let app =
             <>
                 <Header changeSchedule={this.changeSchedule} />
-                <SearchLine
-                    mode={this.state.current_window}
-                    groups={this.state.groups}
-                    teachers={this.state.teachers}
-                    filterByGroup={this.filterByGroup}
-                    filterByTeacher={this.filterBySurname}
-                />
+                {/*<SearchLine*/}
+                {/*    mode={this.state.current_window}*/}
+                {/*    groups={this.state.groups}*/}
+                {/*    teachers={this.state.teachers}*/}
+                {/*/>*/}
                 <hr className={'first-hr my-4'}/>
                 <Content data={this.state.data} mode={this.state.current_window} showSchedule={this.showSchedule}/>
                 <hr className={'first-hr my-4'}/>
