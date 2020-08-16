@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'SF Pro Light';
+    src: url('../fonts/SFProDisplay-Light.eot');
+    src: url('../fonts/SFProDisplay-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SFProDisplay-Light.woff') format('woff'),
+        url('../fonts/SFProDisplay-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Regular';
+    src: url('../fonts/SFProDisplay-Regular.eot');
+    src: url('../fonts/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SFProDisplay-Regular.woff') format('woff'),
+        url('../fonts/SFProDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Bold';
+    src: url('../fonts/SFProDisplay-Medium.eot');
+    src: url('../fonts/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SFProDisplay-Medium.woff') format('woff'),
+        url('../fonts/SFProDisplay-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF Pro Icons Regular";
+    src: url("../fonts/SFProIcons-Regular.eot"); /* IE9*/
+    src: url("../fonts/SFProIcons-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+        url("../fonts/SFProIcons-Regular.woff2") format("woff2"), /* chrome、firefox */
+        url("../fonts/SFProIcons-Regular.woff") format("woff"), /* chrome、firefox */
+        url("../fonts/SFProIcons-Regular.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+        url("../fonts/SFProIcons-Regular.svg#SF Pro Icons Regular") format("svg"); /* iOS 4.1- */
+}
