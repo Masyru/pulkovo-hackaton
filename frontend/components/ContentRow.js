@@ -75,8 +75,8 @@ export default class extends React.Component{
 
     countingWorkDays(array){
         let count = 0
-        array.forEach(obj => {
-            if (!obj.free){
+        array.forEach((obj, i) => {
+            if (obj.free === false && i !== 6){
                 count += 1
             }
         })
@@ -85,9 +85,17 @@ export default class extends React.Component{
                 return 'Каникулы'
             case 1:
                 return `${count} учебный день`
-            case 2 || 3 || 4:
+            case 2:
                 return `${count} учебных дня`
-            case 5 || 6 || 7:
+            case 3:
+                return `${count} учебных дня`
+            case 4:
+                return `${count} учебных дня`
+            case 5:
+                return `${count} учебных дней`
+            case 6:
+                return `${count} учебных дней`
+            case 7:
                 return `${count} учебных дней`
             default:
                 return 'Неизвестно учебных дней'
@@ -98,7 +106,7 @@ export default class extends React.Component{
 
         const obj = this.props.data
         let row =
-            <div className={'calendar-row'}>
+            <div className={'calendar-row my-3'}>
                   <div className={`widget-row my-2`}  id={`${this.props.num}`} onClick={() => {
                             this.setState({active: !this.state.active})
                             document.getElementById(this.props.num).style.height = this.state.active ? '100px' : '350px';

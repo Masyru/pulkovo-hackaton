@@ -3251,13 +3251,15 @@ export default class extends React.Component{
             let groups = []
             arr.weeks.forEach(item => {
                 item.days.forEach(day => {
-                    day.subjects.forEach(sub => {
-                        sub.forEach(section => {
-                            if (!groups.includes(section.group)){
-                                groups.push(section.group)
-                            }
+                    if (!day.free){
+                        day.subjects.forEach(sub => {
+                            sub.forEach(section => {
+                                if (!groups.includes(section.group)){
+                                    groups.push(section.group)
+                                }
+                            })
                         })
-                    })
+                    }
                 })
             })
             this.setState({groups: groups})
@@ -3269,13 +3271,15 @@ export default class extends React.Component{
             let teachers = []
             arr.weeks.forEach(item => {
                 item.days.forEach(day => {
-                    day.subjects.forEach(sub => {
-                        sub.forEach(section => {
-                            if (!teachers.includes(section.teacher)){
-                                teachers.push(section.group)
-                            }
+                    if (!day.free){
+                        day.subjects.forEach(sub => {
+                            sub.forEach(section => {
+                                if (!teachers.includes(section.teacher)){
+                                    teachers.push(section.group)
+                                }
+                            })
                         })
-                    })
+                    }
                 })
             })
             this.setState({teachers: teachers})
