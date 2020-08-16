@@ -41,8 +41,15 @@ body {
 }
 
 .brand {
-    width: 100px;
+    width: 260px;
     height: 100%;
+    display: flex;
+}
+
+.brand img {
+  width: 70%;
+  height: 70%;
+  margin: auto;
 }
 
 .links {
@@ -331,32 +338,3 @@ body {
     font-size: 18px;
     width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
