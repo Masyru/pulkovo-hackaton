@@ -3230,12 +3230,14 @@ export default class extends React.Component{
                   // Examine the text in the response
                   response.json()
                         .then(function(data) {
-                            if (data !== null && data.length){
+                            if (data !== null && data.weeks.length){
                                 _this.setState({
                                     data: data,
                                     fetched_data: data,
                                 })
                                 _this.initTheNameOfGroups(data);
+                                _this.initBySurname(data);
+                                console.log(data)
                             }
                         });
 	        }).catch(function (error) {
