@@ -6,9 +6,8 @@ import random as rnd
 import json
 import re
 from collections import Counter
-
-
-
+import datetime
+        
 def optimize_schedule(path1, path2, path3, n=10**3):
     best_score = 10**4
     best_schedule = None
@@ -24,14 +23,9 @@ def optimize_schedule(path1, path2, path3, n=10**3):
         if undefined < best_score:
             best_score = undefined
             best_schedule = schedule
-        #print(f'{asds}/{n}: {best_score:010d}', end='\r')
+        print(f'{iter_:07d}/{n}: {best_score:010d}', end='\r')
     
-    return best_schedule
-        
-        
-        
-
-
+    return best_schedule['rooms'], best_schedule['teachers'], best_schedule['programs']
 
 def get_schedule(path1, # Path to params
                  path2, # Path to shifts
@@ -252,13 +246,13 @@ def get_schedule(path1, # Path to params
     groups_params = groups_params[list(groups_params.columns[:4])+['face2face_days', 'pairs_a_day', 'available_rooms', 'group_size']]
 
     # CALENDAR PROCCESSING
-    calendar = cal.get_calendar(2020)
+    calendar = cal.get_calendar(datetime.datetime.now().year)
     tmp = [[f'{d:02d}.{m:02d}' for d in calendar[m]] for m in range(1, 13)]
     dates = []
     for group in tmp:
         dates += group
     dates = np.array(dates)
-    vacs = cal.get_vacations(2020)
+    vacs = cal.get_vacations(datetime.datetime.now().year)
     calendar_matrix = pd.DataFrame(np.zeros((12, 31)), columns=[i for i in range(1, 32)]).astype(int)
     for i in range(calendar_matrix.shape[0]):
         if max(calendar[i+1]) != 31:
@@ -273,7 +267,7 @@ def get_schedule(path1, # Path to params
     vacations_mask = get_vacations(calendar, vacations)
 
     groups_params['available_rooms_count'] = groups_params['available_rooms'].apply(lambda x: len(x))
-    groups_params = groups_params.sort_values('available_rooms_count').reset_index(drop=True)
+    groups_params = groups_params.sample(frac=1)
 
     # ROOMS PLANNER
     scalendar_matrix, support_matrix, groups, undefined, profiles_date, profiles, profiles_names = get_random_room_distribution(scalendar_matrix, support_matrix, groups_params, profiles, profiles_names)
@@ -296,10 +290,6 @@ def get_schedule(path1, # Path to params
 
     teachers_params = teachers_params.sample(frac=1)
     teachers_params['programs_id'] = teachers_params['programs_id'].apply(lambda x: list(map(int, x)))
-    cntr = Counter(np.array(teachers_params['programs_id'].sum()))
-    teachers_params['importance_list'] = teachers_params['programs_id'].apply(lambda x: list(map(lambda y: cntr[y], x)))
-    teachers_params['importance_sum'] = teachers_params['importance_list'].apply(lambda x: sum(x))
-    teachers_params = teachers_params.sort_values('importance_sum')
 
     teachers_params = teachers_params[teachers_params['schedule'].apply(lambda x: len(x)) != 0]
     teachers_support = {date:{el:[0, 0, 0, 0] for el in teachers_params['name']} for date in scalendar_matrix.keys()}
@@ -307,7 +297,7 @@ def get_schedule(path1, # Path to params
 
     # TEACHERS PLANNER
     for i, row in teachers_params.iterrows():
-        programs = list(map(lambda x: x[0], sorted(list(zip(row['programs_id'], row['importance_list'])), key=lambda x: x[1])))
+        programs = row['programs_id']
         sched = row['schedule'][rnd.randint(0, len(row['schedule'])-1)]
         for date in sched:
             for room in profiles[date].keys():
@@ -318,6 +308,3 @@ def get_schedule(path1, # Path to params
                                 teachers[date][room][j] = row['name']
                                 teachers_support[date][row['name']][j] = 1
         return {'rooms':scalendar_matrix, 'teachers':teachers, 'programs':profiles_names}
-
-if  __name__ == '__main__':
-    print(optimize_schedule('data/table2.xlsx', 'data/table4.xlsx', 'data/table5.xls')['rooms'])
